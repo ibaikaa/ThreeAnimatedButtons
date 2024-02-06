@@ -18,7 +18,7 @@ final class CustomButton: UIButton {
         config.titleAlignment = .center
         config.titleTextAttributesTransformer = UIConfigurationTextAttributesTransformer { incoming in
             var outgoing = incoming
-            outgoing.foregroundColor = UIColor.white
+            outgoing.foregroundColor = .white
             return outgoing
         }
         
@@ -44,7 +44,7 @@ final class CustomButton: UIButton {
             configuration?.imageColorTransformer = UIConfigurationColorTransformer { _ in .systemGray3 }
             configuration?.titleTextAttributesTransformer = UIConfigurationTextAttributesTransformer { incoming in
                 var outgoing = incoming
-                outgoing.foregroundColor = .systemGray3
+                outgoing.foregroundColor = UIColor.systemGray3
                 return outgoing
             }
                         
