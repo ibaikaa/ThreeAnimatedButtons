@@ -22,7 +22,7 @@ final class CustomButton: UIButton {
             return outgoing
         }
         
-        config.image = UIImage(systemName: "arrow.right.circle.fill")?.withRenderingMode(.alwaysTemplate)
+        config.image = UIImage(systemName: "arrow.right.circle.fill")
         config.imagePadding = 8
         config.imagePlacement = .trailing
         config.imageColorTransformer = UIConfigurationColorTransformer { _ in .white }
@@ -30,7 +30,7 @@ final class CustomButton: UIButton {
         config.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 14, bottom: 10, trailing: 14)
         
         var background = UIButton.Configuration.plain().background
-        background.backgroundColor = .red
+        background.backgroundColor = .systemBlue
         background.cornerRadius = 12
         config.background = background
                 
@@ -40,11 +40,11 @@ final class CustomButton: UIButton {
     override func tintColorDidChange() {
         switch tintAdjustmentMode {
         case .dimmed:
-            configuration?.background.backgroundColorTransformer = UIConfigurationColorTransformer { _ in .black }
-            configuration?.imageColorTransformer = UIConfigurationColorTransformer { _ in .blue }
+            configuration?.background.backgroundColorTransformer = UIConfigurationColorTransformer { _ in .systemGray2 }
+            configuration?.imageColorTransformer = UIConfigurationColorTransformer { _ in .systemGray3 }
             configuration?.titleTextAttributesTransformer = UIConfigurationTextAttributesTransformer { incoming in
                 var outgoing = incoming
-                outgoing.foregroundColor = UIColor.blue
+                outgoing.foregroundColor = .systemGray3
                 return outgoing
             }
                         
