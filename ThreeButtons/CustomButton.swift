@@ -18,7 +18,7 @@ final class CustomButton: UIButton {
         config.titleAlignment = .center
         config.titleTextAttributesTransformer = UIConfigurationTextAttributesTransformer { incoming in
             var outgoing = incoming
-            outgoing.foregroundColor = .white
+            outgoing.foregroundColor = UIColor.white
             return outgoing
         }
         
@@ -41,12 +41,12 @@ final class CustomButton: UIButton {
         switch tintAdjustmentMode {
         case .dimmed:
             configuration?.background.backgroundColorTransformer = UIConfigurationColorTransformer { _ in .systemGray2 }
-            configuration?.imageColorTransformer = UIConfigurationColorTransformer { _ in .systemGray3 }
             configuration?.titleTextAttributesTransformer = UIConfigurationTextAttributesTransformer { incoming in
                 var outgoing = incoming
                 outgoing.foregroundColor = UIColor.systemGray3
                 return outgoing
             }
+            configuration?.imageColorTransformer = UIConfigurationColorTransformer { _ in .systemGray3 }
                         
         default:
             self.configuration = customConfiguration
